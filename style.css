@@ -1,0 +1,96 @@
+/* Reset */
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; padding: 0; }
+
+/* Full-screen background image layer */
+.bg {
+  position: fixed;
+  inset: 0;
+  background-image: url("images/deceived_1_sp.jpg");
+  background-size: cover;        /* fills screen, may crop */
+  background-position: center;   /* keep center visible */
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* Optional: slight dark overlay for readability */
+.bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+/* Foreground */
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #39ff14; /* neon green */
+}
+
+/* Centered stack */
+.wrap {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  grid-template-rows: 1fr auto 1fr; /* push name up, email down */
+  text-align: center;
+  padding: 18px;
+}
+
+/* Top-ish centered */
+.name {
+  grid-row: 2;
+  font-size: clamp(38px, 6vw, 72px);
+  font-weight: 800;              /* a bit fatter */
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  text-shadow: 0 0 12px rgba(57,255,20,0.35);
+}
+
+/* Lower centered, small like before */
+.email {
+  grid-row: 3;
+  align-self: start;             /* start of bottom third */
+  font-size: 14px;
+  font-weight: 700;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(57,255,20,0.6);
+  padding-bottom: 2px;
+  text-shadow: 0 0 10px rgba(57,255,20,0.25);
+}
+
+.email:hover {
+  border-bottom-color: rgba(57,255,20,1);
+}
+
+/* Copyright at bottom with distance */
+.copyright {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 16px;                  /* distance from bottom */
+  z-index: 1;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  opacity: 0.9;
+  text-shadow: 0 0 10px rgba(57,255,20,0.25);
+}
+
+/* Landscape mobile: reduce sizes a bit */
+@media (max-width: 932px) and (orientation: landscape) {
+  .name {
+    font-size: clamp(28px, 5vw, 44px);
+    margin-bottom: 8px;
+  }
+  .copyright {
+    bottom: 10px;
+    font-size: 12px;
+  }
+  .email {
+    font-size: 12px;
+  }
+}

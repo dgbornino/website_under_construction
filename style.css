@@ -18,13 +18,12 @@ html, body {
   position: fixed;
   inset: 0;
   background-image: url("images/deceived_1_sp.jpg");
-  background-size: cover;        /* fills screen, may crop, never squeezes */
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   z-index: 0;
 }
 
-/* Dark overlay for readability (tweak 0.20–0.45) */
 .bg::after {
   content: "";
   position: absolute;
@@ -67,15 +66,12 @@ body {
   font-weight: 700;
   font-size: clamp(36px, 6vw, 70px);
   letter-spacing: 0.5px;
-
-  /* move it a bit up */
   transform: translateY(-22px);
-
   text-shadow: 0 0 12px rgba(57,255,20,0.4);
 }
 
 /* ========================= */
-/* Email (small, centered, lower) */
+/* Email */
 /* ========================= */
 
 .email {
@@ -85,23 +81,20 @@ body {
   font-size: 14px;
   font-weight: 600;
 
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(57,255,20,0.6);
-  padding-bottom: 2px;
-
-  /* move it a bit down */
+  color: #39ff14;              /* neon green */
+  text-decoration: none;       /* NO underline */
   transform: translateY(22px);
 
-  text-shadow: 0 0 8px rgba(57,255,20,0.3);
+  transition: color 0.2s ease;
 }
 
+/* Hover: neon purple */
 .email:hover {
-  border-bottom-color: rgba(57,255,20,1);
+  color: #c300ff;              /* neon purple */
 }
 
 /* ========================= */
-/* Copyright (bottom centered) */
+/* Copyright */
 /* ========================= */
 
 .copyright {
@@ -118,11 +111,10 @@ body {
   font-weight: 600;
 
   opacity: 0.9;
-  text-shadow: 0 0 8px rgba(57,255,20,0.3);
 }
 
 /* ========================= */
-/* Mobile / small screens */
+/* Mobile */
 /* ========================= */
 
 @media (max-width: 768px) {

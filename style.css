@@ -24,11 +24,12 @@ html, body {
   z-index: 0;
 }
 
+/* Reduced overlay (lighter for more contrast) */
 .bg::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0,0,0,0.15);  /* was 0.35 */
 }
 
 /* ========================= */
@@ -81,16 +82,15 @@ body {
   font-size: 14px;
   font-weight: 600;
 
-  color: #39ff14;              /* neon green */
-  text-decoration: none;       /* NO underline */
+  color: #39ff14;
+  text-decoration: none;
   transform: translateY(22px);
 
   transition: color 0.2s ease;
 }
 
-/* Hover: neon purple */
 .email:hover {
-  color: #c300ff;              /* neon purple */
+  color: #c300ff; /* neon purple */
 }
 
 /* ========================= */
